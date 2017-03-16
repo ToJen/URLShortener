@@ -16,8 +16,11 @@ def make_tiny(url):
         return response.read().decode('utf-8')
 
 def main():
-    for tinyurl in map(make_tiny, sys.argv[1:]):
-        print(tinyurl)
+    print("-------------URLShortener.py-------------")
+    url = raw_input("Enter the URL you would like to shorten: ")
+    print(make_tiny(url))
+    """for tinyurl in map(make_tiny, sys.argv[1:]):
+        print(tinyurl)"""
 
 if __name__ == '__main__':
     main()
