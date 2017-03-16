@@ -19,9 +19,13 @@ def main():
     print("-------------URLShortener.py-------------\n")
 
     if len(sys.argv) < 2:
-        url = raw_input("Enter URL: ")
-        print("\nResult: "),
-        print(make_tiny(url))
+        while True:
+            url = input("Enter URL: ")
+            if (url == "") or (url == "q") or (url == "quit") or (url == "exit"):
+                break
+            else:
+                print("\nResult: "),
+                print(make_tiny(url))
     else:
         num = 1
         for tinyurl in map(make_tiny, sys.argv[1:]):
